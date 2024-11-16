@@ -1,17 +1,13 @@
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
-import logo from "@/public/logo.png"
+import logo from "@/public/logo-azul.png"
 import Image from "next/image";
 import {
   ShoppingCartIcon,
   MenuIcon,
-  XIcon,
-  MinusIcon,
-  PlusIcon,
-  TrashIcon,
-  ShoppingBag,
-  ArrowRight,
+  XIcon
 } from "lucide-react";
+import { MyDrawer } from './MyDrawer/MyDrawer';
 
 //@ts-ignore
 const Header = ({ setCurrentPage, cart, setCart, isCartOpen, setIsCartOpen }) => {
@@ -62,8 +58,9 @@ const Header = ({ setCurrentPage, cart, setCart, isCartOpen, setIsCartOpen }) =>
 
   return (
 
-    <div className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 items-center">
+    <div className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60" id='navbar'>
+      <div className="container flex h-14 items-center relative">
+
         <div className="mr-4 hidden md:flex">
           <a
             className="mr-6 flex items-center space-x-2"
@@ -72,34 +69,35 @@ const Header = ({ setCurrentPage, cart, setCart, isCartOpen, setIsCartOpen }) =>
           >
             <Image src={logo} className="h-12 w-12" alt='logo image' />
 
-            <div className="hidden flex-col-reverse text-base items-start sm:flex font-black leading-5">
-              Santa María <span className='text-xs'>
+            <div className="hidden flex-col-reverse text-base items-start sm:flex font-black leading-3 text-[#046db5]">
+              Santa María <span className='text-xs text-black'>
                 Plásticos
               </span>
             </div>
           </a>
           <nav className="flex items-center space-x-6 text-sm font-medium">
             <a
-              className="transition-colors hover:text-foreground/80 text-foreground/60"
-              href="#"
-              onClick={() => setCurrentPage("products")}
-            >
-              Productos
-            </a>
-            <a
-              className="transition-colors hover:text-foreground/80 text-foreground/60"
+              className="transition-colors shadow hover:bg-foreground/5 px-4 py-2 rounded-md hover:text-foreground/80 text-foreground/60"
               href="/#categories-section"
             >
               Categorias
             </a>
             <a
-              className="transition-colors hover:text-foreground/80 text-foreground/60"
+              className="transition-colors shadow hover:bg-foreground/5 px-4 py-2 rounded-md hover:text-foreground/80 text-foreground/60"
+              href="#"
+              onClick={() => setCurrentPage("products")}
+            >
+              Productos
+            </a>
+
+            <a
+              className="transition-colors shadow hover:bg-foreground/5 px-4 py-2 rounded-md hover:text-foreground/80 text-foreground/60"
               href="/#deals"
             >
               Ofertas
             </a>
             <a
-              className="transition-colors hover:text-foreground/80 text-foreground/60"
+              className="transition-colors shadow hover:bg-foreground/5 px-4 py-2 rounded-md hover:text-foreground/80 text-foreground/60"
               href="/about"
             >
               Nosotros
@@ -116,51 +114,12 @@ const Header = ({ setCurrentPage, cart, setCart, isCartOpen, setIsCartOpen }) =>
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <MenuIcon className="h-5 w-5" />
-          <span className="sr-only">Toggle Menu</span>
+
         </button>
-        {isMenuOpen && (
-          <div className="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm md:hidden">
-            <div className="fixed left-0 top-0 bottom-0 w-full max-w-xs p-6 bg-background shadow-lg">
-              <div className="flex flex-col space-y-4">
-                <a
-                  className="text-sm font-medium text-primary"
-                  href="#"
-                  onClick={() => {
-                    setCurrentPage("products");
-                    setIsMenuOpen(false);
-                  }}
-                >
-                  Productos
-                </a>
-                <a
-                  className="text-sm font-medium text-primary"
-                  href="/#categories-section"
-                >
-                  Categorias
-                </a>
-                <a
-                  className="text-sm font-medium text-primary"
-                  href="#"
-                >
-                  Ofertas
-                </a>
-                <a
-                  className="text-sm font-medium text-primary"
-                  href="/#about"
-                >
-                  Nosotros
-                </a>
-              </div>
-              <button
-                className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <XIcon className="h-4 w-4" />
-                <span className="sr-only">Close</span>
-              </button>
-            </div>
-          </div>
-        )}
+        <div className="block md:hidden z-[100] fixed top-3 right-3">
+          <MyDrawer />
+        </div>
+
         <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
           <nav className="flex items-center">
             <Button

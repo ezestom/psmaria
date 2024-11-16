@@ -22,6 +22,7 @@ import SiteFooter from "@/components/site-footer";
 import ProductPage from "@/components/product-section";
 import Header from "@/components/site-header";
 import { FlipWordsDemo } from "@/components/FlipWordsDemo";
+import { TimeLineScroll } from '@/components/ui/time-line-scroll';
 
 
 
@@ -66,11 +67,9 @@ const products = [
 
 const categories = [
   { name: "Alimentos", icon: "🍔" },
-  { name: "Cosméticos", icon: "💄" },
   { name: "Farmacia", icon: "💊" },
   { name: "Químicos", icon: "⚗️" },
   { name: "Limpieza", icon: "🧼" },
-  { name: "Higiene", icon: "🧴" },
 ];
 
 const deals = [
@@ -199,6 +198,7 @@ export default function ECommerceApp() {
     // Landing Page  Section 
     <main className="flex-1 ">
       <section className="w-full min-h-screen  dark:bg-black overflow-hidden relative flex items-center justify-center" id='hero'>
+        <TimeLineScroll />
         <div className="container px-4 md:px-6 mb-16 mx-auto ">
 
           <div className="flex flex-col justify-center space-y-8 text-center lg:text-left ">

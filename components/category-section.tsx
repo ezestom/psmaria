@@ -18,10 +18,10 @@ const CategorySection: React.FC<CategorySectionProps> = ({ categories }) => {
         <div className="flex flex-wrap justify-center gap-10">
           {categories.map((category, index) => (
             <div key={index} className="flex flex-col items-center text-center">
-              <div className="w-20 h-20 mb-4 flex items-center justify-center text-5xl text-gray-800 bg-gray-100 rounded-full">
+              <a href='#' className="size-20 hover:scale-105 transition hover:grayscale-0 sm:size-32 grayscale mb-4 flex items-center justify-center text-5xl text-gray-800 bg-gray-100 rounded-full">
                 {category.icon}
-              </div>
-              <h3 className="text-xl font-medium  text-gray-900">{category.name}</h3>
+              </a>
+              <h3 className="text-base   text-gray-900">{category.name}</h3>
             </div>
           ))}
         </div>

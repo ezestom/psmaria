@@ -1,10 +1,13 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import { toast, Toaster } from "sonner";
-import x from "/public/icons/x.svg";
+import xIcon from "@/public/icons/x.svg";
 import "./Form.css";
-import logo from "/public/logo.png";
-import band from "/public/band.jpg";
+import logo from "@/public/logo.png";
+import band from "@/public/logo-azul.png";
 import { Button } from "../ui/button";
+import Image from "next/image";
 
 export function Form({
 	h1,
@@ -39,14 +42,14 @@ export function Form({
 		setDialog(true);
 		document.body.style.overflow = "hidden";
 		document.getElementById("navbar").style.display = "none";
-		document.getElementById("progress").style.display = "none";
+		// document.getElementById("progress").style.display = "none";
 	};
 
 	const closeDialog = () => {
 		setDialog(false);
 		document.body.style.overflow = "auto";
 		document.getElementById("navbar").style.display = "flex";
-		document.getElementById("progress").style.display = "flex";
+		// document.getElementById("progress").style.display = "flex";
 	};
 
 	const isMessageSuccess = () => {
@@ -84,10 +87,7 @@ export function Form({
 			);
 
 			setTimeout(() => {
-				const isEnglish = window.location.pathname.startsWith("/en");
-				const redirectTo = isEnglish
-					? "/en/message-sent"
-					: "/message-sent";
+				const redirectTo = "/sent-message";
 
 				closeDialog();
 				window.location.href = redirectTo;
@@ -103,7 +103,7 @@ export function Form({
 	};
 
 	return (
-		<div className="relative form-container z-10 m-auto">
+		<div className="relative flex items-center mt-10 justify-center z-10 m-auto">
 			<Toaster />
 			{/* <div className="flex w-full items-center justify-center">
 				<a
@@ -118,7 +118,7 @@ export function Form({
 					/>
 				</a>
 			</div> */}
-			<span className="flex btn-form">
+			<span className="flex  btn-form">
 				<Button onClick={openDialog} id="open-dialog" type="submit">
 					{button}
 					<svg
@@ -141,34 +141,19 @@ export function Form({
 					open
 					className="backdrop-blur  flex items-center justify-center fixed top-0 bg-black/20 w-full h-full">
 					<section className="md:bg-black/40 backdrop-blur-md flex items-center justify-center overflow-hidden  ">
-						<div className="lg:grid h-full min-h-full lg:min-h-screen lg:grid-cols-12 w-full px-4 md:px-0 ">
-							<aside className="relative hidden md:block h-16 lg:order-last lg:col-span-5 lg:h-full xl:col-span-6">
-								<picture>
-									<img
-										src={band.src}
-										alt="agriculture woman image"
-										className="absolute inset-0 h-full w-full object-cover hidden lg:block"
-									/>
-									<img
-										src={logo.src}
-										className="absolute  bottom-20 mx-auto left-10 max-w-[150px] drop-shadow-md"
-										alt="logo cacta"
-									/>
-								</picture>
-							</aside>
-
-							<main className="flex items-center justify-center py-8 md:px-12 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6 ">
-								<div className="form-container-dialog max-w-[550px]  p-4 bg-[#f0f0f0] rounded-3xl relative">
-									<button
-										className="absolute z-100 top-2 right-2 "
+						<div className="w-96 p-8">
+							<main className="flex items-center justify-center">
+								<div className=" bg-gray-100  shadow-md p-10 rounded-xl relative">
+									<Button
+										className="absolute z-100 top-0 right-0 "
 										onClick={closeDialog}>
-										<img
-											className="inline-flex  cursor-pointer items-center justify-center rounded-3xl bg-gradient-to-r from-[#030f33] to-[#4e737a]  p-2 hover:scale-105 transition font-medium text-gray-50 backdrop-blur-3xl"
-											src={x.src}
+										<Image
+											className="w-4 h-4 "
+											src={xIcon}
 											alt="x-icon"
 											id="close-dialog"
 										/>
-									</button>
+									</Button>
 									<h1 className="font-bold mx-2 text-gray-900 text-2xl">
 										{h1}
 									</h1>
@@ -188,12 +173,6 @@ export function Form({
 										className="mt-8 gap-6 mx-2">
 										<input
 											type="hidden"
-											name="_cc"
-											value="vicky.engelberger@cacta.eco,ezequielstom@gmail.com"
-										/>
-
-										<input
-											type="hidden"
 											name="_subject"
 											value="📃 Santa María | 📩 Nuevo Mensaje!"
 										/>
@@ -209,7 +188,7 @@ export function Form({
 										/>
 
 										<div className="col-span-6 sm:col-span-3">
-											<label className="block text-sm  font-medium text-gray-700">
+											<label className="flex justify-start items-start py-2 flex-col text-sm  font-medium text-gray-700">
 												{name}
 												<input
 													type="text"
@@ -222,7 +201,7 @@ export function Form({
 											</label>
 										</div>
 										<div className="col-span-6 sm:col-span-3">
-											<label className="block text-sm  font-medium text-gray-700">
+											<label className="flex justify-start items-start py-2 flex-col text-sm  font-medium text-gray-700">
 												{company}
 												<input
 													type="text"
@@ -235,7 +214,7 @@ export function Form({
 											</label>
 										</div>
 										<div className="col-span-6 sm:col-span-3">
-											<label className="block text-sm  font-medium text-gray-700">
+											<label className="flex justify-start items-start py-2 flex-col text-sm  font-medium text-gray-700">
 												{email}
 												<input
 													className="p-2 my-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
@@ -250,7 +229,7 @@ export function Form({
 											</label>
 										</div>
 										<fieldset>
-											<legend className="block text-sm  font-medium text-gray-700">
+											<legend className="flex flex-col items-start justify-start text-sm py-2 font-medium text-gray-700 ">
 												{message}
 												<textarea
 													name="message"
@@ -263,12 +242,10 @@ export function Form({
 											</legend>
 										</fieldset>
 
-										<div className="col-span-6 sm:flex sm:items-center sm:gap-4">
-											<button
-												className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-xl bg-gradient-to-r from-[#007d67] to-[#00ff9a] py-3 font-medium text-md text-gray-50 backdrop-blur-3xl hover:scale-[1.02] transition mt-2"
-												type="submit">
+										<div className="flex justify-center flex-col pt-4 gap-4">
+											<Button type="submit">
 												{send}
-											</button>
+											</Button>
 											<p className="mt-4 text-sm text-gray-700 font-semibold sm:mt-0 text-center ">
 												✉️ {message_2}
 											</p>

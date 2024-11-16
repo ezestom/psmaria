@@ -1,6 +1,6 @@
 import React from 'react';
-import { Subtitle } from './ui/subtitle';
 import { Form } from './Form/Form';
+import { Subtitle } from './ui/subtitle';
 
 const CTASignUpSection = () => {
 
@@ -16,18 +16,18 @@ const CTASignUpSection = () => {
           </div>
           <div className="w-full max-w-sm space-y-2">
             <Form
-              h1='hola'
-              subtitle='subtitle'
+              h1='En Plásticos Santa María, estamos en contacto con nuestros clientes.'
+              subtitle='Por favor completa el siguiente formulario y nos pondremos en contacto contigo a la brevedad.'
+              toast_message='Gracias por tu consulta, te responderemos a la brevedad.'
+              name='Nombre'
+              company='Empresa'
+              email='Email'
+              email_placeholder='juan_perez@email.com'
+              message='Mensaje'
+              message_placeholder='Escribe tu mensaje aquí...'
               button='Enviar consulta'
-              toast_message='toast_message'
-              name='nombre'
-              company='empresa'
-              email='email'
-              email_placeholder='email_placeholder'
-              message='mensaje'
-              message_placeholder='message_placeholder'
-              send='Enviar'
-              message_2='message_2'
+              send='Enviar consulta'
+              message_2='A la brevedad nos pondremos en contacto contigo.'
             />
 
 
