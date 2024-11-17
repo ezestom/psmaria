@@ -1,10 +1,16 @@
+#form-section{
+	max-width: 650px;
+}
+#input-container {
+	padding: 2rem;
+}
 legend,
 input,
 textarea {
 	border-radius: 0.5rem;
 	border: none;
 	color: black;
-  width: 100%;
+	width: 100%;
 }
 
 textarea {

@@ -139,11 +139,15 @@ export function Form({
 			{dialog && (
 				<dialog
 					open
-					className="backdrop-blur  flex items-center justify-center fixed top-0 bg-black/20 w-full h-full">
-					<section className="md:bg-black/40 backdrop-blur-md flex items-center justify-center overflow-hidden  ">
+					className="backdrop-blur  flex items-center justify-center fixed top-0  w-full h-full">
+					<section
+						className="backdrop-blur-md flex items-center justify-center overflow-hidden bg-[#046db5]/50 "
+						id="form-section">
 						<div className="w-96 p-8">
 							<main className="flex items-center justify-center">
-								<div className=" bg-gray-100  shadow-md p-10 rounded-xl relative">
+								<div
+									className=" bg-neutral-100  shadow-md rounded-xl relative"
+									id="input-container">
 									<Button
 										className="absolute z-100 top-0 right-0 "
 										onClick={closeDialog}>
@@ -154,11 +158,11 @@ export function Form({
 											id="close-dialog"
 										/>
 									</Button>
-									<h1 className="font-bold mx-2 text-gray-900 text-2xl">
+									<h1 className="font-bold mx-2 text-gray-900 text-xl sm:text-2xl ">
 										{h1}
 									</h1>
 
-									<p className="mt-4 leading-relaxed mx-2 text-gray-700">
+									<p className="mt-4 text-sm leading-relaxed mx-2 text-gray-700">
 										{subtitle}
 									</p>
 									{isLoading && (
@@ -194,7 +198,7 @@ export function Form({
 													type="text"
 													name="name"
 													id="name"
-													placeholder="John Doe"
+													placeholder="Juan Perez"
 													required
 													className="p-2 my-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
 												/>
@@ -207,7 +211,7 @@ export function Form({
 													type="text"
 													name="company"
 													id="company"
-													placeholder="Cacta SaS."
+													placeholder="Plásticos Santa María"
 													required
 													className="p-2 my-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
 												/>
