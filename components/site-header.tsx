@@ -59,7 +59,7 @@ const Header = ({ setCurrentPage, cart, setCart, isCartOpen, setIsCartOpen }) =>
   return (
 
     <div className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60" id='navbar'>
-      <div className="container flex h-14 items-center relative">
+      <div className="container px-0 flex h-14 items-center relative">
 
         <div className="mr-4 hidden md:flex">
           <a
@@ -78,7 +78,13 @@ const Header = ({ setCurrentPage, cart, setCart, isCartOpen, setIsCartOpen }) =>
           <nav className="flex items-center space-x-6 text-sm font-medium">
             <a
               className="transition-colors shadow hover:bg-foreground/5 px-4 py-2 rounded-md hover:text-foreground/80 text-foreground/60"
-              href="/#categories-section"
+              href="/#deals"
+            >
+              Ofertas
+            </a>
+            <a
+              className="transition-colors shadow hover:bg-foreground/5 px-4 py-2 rounded-md hover:text-foreground/80 text-foreground/60"
+              href="#categories-section"
             >
               Categorias
             </a>
@@ -90,12 +96,7 @@ const Header = ({ setCurrentPage, cart, setCart, isCartOpen, setIsCartOpen }) =>
               Productos
             </a>
 
-            <a
-              className="transition-colors shadow hover:bg-foreground/5 px-4 py-2 rounded-md hover:text-foreground/80 text-foreground/60"
-              href="/#deals"
-            >
-              Ofertas
-            </a>
+         
             <a
               className="transition-colors shadow hover:bg-foreground/5 px-4 py-2 rounded-md hover:text-foreground/80 text-foreground/60"
               href="/about"
@@ -113,20 +114,17 @@ const Header = ({ setCurrentPage, cart, setCart, isCartOpen, setIsCartOpen }) =>
           data-state={isMenuOpen ? "open" : "closed"}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
-          <MenuIcon className="h-5 w-5" />
-
         </button>
         <div className="block md:hidden z-[100] fixed top-3 right-3">
           <MyDrawer />
         </div>
 
         <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
-          <nav className="flex items-center">
+          <nav className="sm:flex hidden items-center">
             <Button
               variant="ghost"
               className="mr-6 text-base hover:bg-transparent focus:ring-0 focus:ring-offset-0 focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
             >
-              <ShoppingCartIcon className="h-6 w-6" />
               <span className="sr-only">Home</span>
             </Button>
           </nav>

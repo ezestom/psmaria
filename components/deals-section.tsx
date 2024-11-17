@@ -1,4 +1,3 @@
-'use client';
 
 import React from 'react';
 import { Button } from './ui/button';
@@ -32,10 +31,10 @@ const DealsSection: React.FC<DealsSectionProps> = ({ deals, addToCart }) => {
                 <CardContent className="p-4 flex flex-col justify-between h-full">
                   <div className="flex-1">
                     <Image
+                      width={300}
+                      height={300}
                       src={deal.image}
                       alt={deal.name}
-                      width={500}
-                      height={500}
                       className="w-full h-56 object-cover mb-4 rounded-lg transition-transform duration-300 ease-in-out "
                     />
                     <div className="flex justify-between items-center mb-2">

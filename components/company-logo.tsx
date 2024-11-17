@@ -71,7 +71,10 @@ const CompanyLogoSection = () => {
   ];
 
   return (
-    <section className="w-full ">
+    <section className="w-full relative ">
+      <div
+        className="-z-10 mt-20 absolute h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-[radial-gradient(rebeccapurple_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]">
+      </div>
       <div className="container px-4 md:px-6">
         <Subtitle subtitle="Empresas" paragraph="Que confían en nosotros" />
 
@@ -85,7 +88,7 @@ const CompanyLogoSection = () => {
                   key={i}
                   target="_blank"
                   className="size-24 md:size-48">
-                  <div className="p-2 flex grayscale transition duration-200 hover:grayscale-0">
+                  <div className="p-2 flex grayscale transition duration-200 hover:grayscale-0 hover:scale-105 ">
                     <Image
                       alt={`${company.name} logo`}
                       className="overflow-hidden rounded-lg object-cover object-center "

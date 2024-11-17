@@ -24,45 +24,96 @@ import Header from "@/components/site-header";
 import { FlipWordsDemo } from "@/components/FlipWordsDemo";
 import { TimeLineScroll } from '@/components/ui/time-line-scroll';
 
+import img1 from "@/public/band.jpg";
+import Image from 'next/image';
 
 
-const products = [
+
+export const products = [
   {
     id: 1,
-    name: "Project Management Pro",
+    name: "Bandeja de 1000 unidades",
     price: 99.99,
-    image: "https://via.placeholder.com/1000",
+    image: img1,
   },
   {
     id: 2,
-    name: "Code Editor Deluxe",
-    price: 79.99,
-    image: "https://via.placeholder.com/1000",
+    name: "Bandeja de 500 unidades",
+    price: 59.99,
+    image: img1,
   },
   {
     id: 3,
-    name: "Database Manager Ultimate",
-    price: 149.99,
-    image: "https://via.placeholder.com/1000",
+    name: "Bandeja de 250 unidades",
+    price: 29.99,
+    image: img1,
   },
   {
     id: 4,
-    name: "Cloud Storage Solution",
-    price: 59.99,
-    image: "https://via.placeholder.com/1000",
+    name: "Bandeja de 100 unidades",
+    price: 14.99,
+    image: img1,
   },
   {
     id: 5,
-    name: "Secure VPN Service",
-    price: 39.99,
-    image: "https://via.placeholder.com/1000",
+    name: "Bandeja de 50 unidades",
+    price: 7.99,
+    image: img1,
   },
   {
     id: 6,
-    name: "AI-Powered Analytics",
-    price: 199.99,
-    image: "https://via.placeholder.com/1000",
+    name: "Bandeja de 25 unidades",
+    price: 3.99,
+    image: img1,
   },
+  {
+    id: 7,
+    name: "Bandeja de 1000 unidades",
+    price: 279.99,
+    originalPrice: 399.99,
+    image: img1,
+    tag: "Oferta",
+  },
+  {
+    id: 8,
+    name: "Bandeja de 500 unidades",
+    price: 149.99,
+    originalPrice: 199.99,
+    image: img1,
+    tag: "Oferta",
+  },
+  {
+    id: 9,
+    name: "Bandeja de 250 unidades",
+    price: 79.99,
+    originalPrice: 99.99,
+    image: img1,
+    tag: "Oferta",
+  },
+  {
+    id: 10,
+    name: "Bandeja de 100 unidades",
+    price: 39.99,
+    originalPrice: 49.99,
+    image: img1,
+    tag: "Oferta",
+  },
+  {
+    id: 11,
+    name: "Bandeja de 50 unidades",
+    price: 19.99,
+    originalPrice: 29.99,
+    image: img1,
+    tag: "Oferta",
+  },
+  {
+    id: 12,
+    name: "Bandeja de 25 unidades",
+    price: 9.99,
+    originalPrice: 14.99,
+    image: img1,
+    tag: "Oferta",
+  }
 ];
 
 const categories = [
@@ -78,7 +129,7 @@ const deals = [
     name: "Bandeja de 1000 unidades",
     price: 279.99,
     originalPrice: 399.99,
-    image: '/band.jpg',
+    image: img1,
     tag: "Oferta",
   },
   {
@@ -86,7 +137,7 @@ const deals = [
     name: "Bandeja de 500 unidades",
     price: 149.99,
     originalPrice: 199.99,
-    image: '/band.jpg',
+    image: img1,
     tag: "Oferta",
   },
   {
@@ -94,7 +145,7 @@ const deals = [
     name: "Bandeja de 250 unidades",
     price: 79.99,
     originalPrice: 99.99,
-    image: '/band.jpg',
+    image: img1,
     tag: "Oferta",
   },
   {
@@ -102,7 +153,7 @@ const deals = [
     name: "Bandeja de 100 unidades",
     price: 39.99,
     originalPrice: 49.99,
-    image: '/band.jpg',
+    image: img1,
     tag: "Oferta",
   },
   {
@@ -110,7 +161,7 @@ const deals = [
     name: "Bandeja de 50 unidades",
     price: 19.99,
     originalPrice: 29.99,
-    image: '/band.jpg',
+    image: img1,
     tag: "Oferta",
   },
   {
@@ -118,13 +169,12 @@ const deals = [
     name: "Bandeja de 25 unidades",
     price: 9.99,
     originalPrice: 14.99,
-    image: '/band.jpg',
+    image: img1,
     tag: "Oferta",
   }
 ];
 
 export default function ECommerceApp() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState("landing");
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -215,7 +265,7 @@ export default function ECommerceApp() {
               <Button
                 variant="outline"
                 className="inline-flex items-center justify-center border-black text-black dark:border-white dark:text-white hover:bg-gray-100 dark:hover:bg-gray-900"
-                onClick={() => window.open('https://easyui.pro', '_blank')}
+                onClick={() => window.location.href = '/about'}
               >
                 Sobre la Empresa
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -227,7 +277,9 @@ export default function ECommerceApp() {
 
       <CompanyLogoSection />
 
+
       <DealsSection deals={deals} addToCart={addToCart} />
+
 
       <CategorySection categories={categories} />
 
@@ -250,7 +302,7 @@ export default function ECommerceApp() {
           />
           <div className="fixed inset-y-0 right-0 w-full sm:w-96 bg-background shadow-lg p-6 overflow-y-auto z-50">
             <div className="flex justify-between items-center mb-6">
-              <h2 className="text-2xl font-bold">Your Cart</h2>
+              <h2 className="text-2xl font-bold">Tu carrito</h2>
               <Button
                 variant="ghost"
                 size="icon"
@@ -260,7 +312,14 @@ export default function ECommerceApp() {
               </Button>
             </div>
             {cart.length === 0 ? (
-              <p className="text-muted-foreground">Your cart is empty.</p>
+              <p className="text-muted-foreground flex flex-col items-start gap-2">
+                Tu carrito está vacío.{" "}
+                <Button
+                  onClick={() => setCurrentPage("products")}
+                >
+                  Agregar productos
+                </Button>
+              </p>
             ) : (
               <>
                 {cart.map((item) => (
@@ -270,7 +329,7 @@ export default function ECommerceApp() {
                     className="flex items-center justify-between mb-4"
                   >
                     <div className="flex items-center">
-                      <img
+                      <Image
                         // @ts-ignore
                         src={item.image}
                         // @ts-ignore

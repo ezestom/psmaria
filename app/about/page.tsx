@@ -8,7 +8,6 @@ import factory from "@/public/factory.jpg";
 import { Subtitle } from "@/components/ui/subtitle";
 
 function AboutSection() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState("landing");
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -22,7 +21,7 @@ function AboutSection() {
         isCartOpen={isCartOpen}
         setIsCartOpen={setIsCartOpen}
       />
-      <section className="w-full py-4 bg-muted min-h-screen">
+      <section className="w-full py-4  min-h-screen">
         <div className="container px-4 md:px-6">
           <Subtitle subtitle="Sobre Nosotros" paragraph="Conoce más sobre nosotros" />
           <article className="flex flex-col sm:flex-row">

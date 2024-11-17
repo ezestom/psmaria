@@ -140,8 +140,9 @@ export function Form({
 				<dialog
 					open
 					className="backdrop-blur  flex items-center justify-center fixed top-0  w-full h-full">
+					<div className="-z-10 mt-20 absolute h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-[radial-gradient(rebeccapurple_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
 					<section
-						className="backdrop-blur-md flex items-center justify-center overflow-hidden bg-[#046db5]/50 "
+						className="backdrop-blur-md flex items-center justify-center overflow-hidden  "
 						id="form-section">
 						<div className="w-96 p-8">
 							<main className="flex items-center justify-center">

@@ -12,16 +12,19 @@ export function MyDrawer() {
 			</Drawer.Trigger>
 			<Drawer.Portal>
 				<Drawer.Overlay className="fixed inset-0 bg-black/40 z-50" />
-				<Drawer.Content className="flex flex-col rounded-t-[10px] mt-24 fixed bottom-0 left-0 right-0 z-50  bg-gray-100">
+				<Drawer.Content className="flex flex-col rounded-t-[10px] mt-24 fixed top-0 h-full left-0 z-50 w-full  bg-neutral-100">
+					<Button className="h-8">
+						<Grip className="size-10 my-4"/>
+					</Button>
 					<div className="p-4 j rounded-t-[10px] flex-1 flex justify-center items-center flex-col ">
-						<Button >
-							<Grip />
-						</Button>
 						<div className="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full  mb-8" />
 						<div className=" mx-auto">
-							<Drawer.Title className="text-xl font-medium mb-4 text-center">
+							<Drawer.Title className="text-4xl mb-4 text-center font-bold">
 								Plásticos Santa María
 							</Drawer.Title>
+							<Drawer.Description className="text-center font-semibold text-lg">
+								Tu socio en plásticos
+							</Drawer.Description>
 						</div>
 					</div>
 					<div className="p-4 bg-zinc-100 border-t border-zinc-200 mt-auto">
@@ -44,6 +47,11 @@ export function MyDrawer() {
 								href="#"
 								className="cursor-pointer text-center relative group overflow-hidden border-2 px-8 py-2 border-[--secondary]">
 								Pedir presupuesto
+							</a>
+							<a
+								href="#"
+								className="cursor-pointer text-center relative group overflow-hidden border-2 px-8 py-2 border-[--secondary]">
+								Contacto
 							</a>
 						</div>
 					</div>

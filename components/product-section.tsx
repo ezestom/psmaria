@@ -1,6 +1,8 @@
 import React from 'react';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
+import { Subtitle } from './ui/subtitle';
+import Image from 'next/image';
 // Import any additional components or hooks you need
 
 // Assuming `products` and `addToCart` are passed as props
@@ -21,15 +23,15 @@ const ProductPage: React.FC<ProductPageProps> = ({ products, addToCart }) => {
     <main className="flex-1">
       <section className="w-full py-10 md:py-10 lg:py-10">
         <div className="container px-4 md:px-6">
-          <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-8">
-            Our Software Products
-          </h1>
+          <Subtitle subtitle="Productos" paragraph='Lista completa de nuestros productos' />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {products.map((product) => (
               <div key={product.id}>
                 <Card>
                   <CardContent className="p-4">
-                    <img
+                    <Image
+                      width={300}
+                      height={300}
                       src={product.image}
                       alt={product.name}
                       className="w-full h-48 object-cover mb-4 rounded-md"
@@ -44,7 +46,7 @@ const ProductPage: React.FC<ProductPageProps> = ({ products, addToCart }) => {
                       onClick={() => addToCart(product)}
                       className="w-full"
                     >
-                      Add to Cart
+                      Agregar al carrito
                     </Button>
                   </CardContent>
                 </Card>

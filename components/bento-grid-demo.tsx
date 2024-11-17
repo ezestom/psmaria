@@ -35,7 +35,7 @@ const CustomImage = () => (
       <Image
          src={box}
          alt="placeholder"
-         className="flex flex-1 min-h-6 object-contain py-4 group h-full  rounded-xl border border-transparent dark:border-white/[0.2] shadow dark:bg-black"
+         className="flex flex-1 min-h-6 object-contain py-4 group h-full  rounded-xl border border-transparent  dark:border-white/[0.2] shadow dark:bg-black 0"
       />
    </>
 );
