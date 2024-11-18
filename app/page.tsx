@@ -404,12 +404,12 @@ export default function ECommerceApp() {
         isCartOpen={isCartOpen}
         setIsCartOpen={setIsCartOpen}
       />
-      {currentPage === "landing" ? (
+      {/* {currentPage === "landing" ? (
         renderLandingPage()
       ) : (
         <ProductPage products={products} addToCart={addToCart} />
       )}
-      {renderCart()}
+      {renderCart()} */}
       <SiteFooter />
     </div>
   );
