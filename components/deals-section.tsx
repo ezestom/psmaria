@@ -3,14 +3,14 @@ import React from 'react';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
 import { Subtitle } from './ui/subtitle';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 
 interface Deal {
   id: number;
   name: string;
   price: number;
   originalPrice: number;
-  image: string;
+  image: StaticImageData;
   tag: string;
 }
 
