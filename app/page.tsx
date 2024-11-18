@@ -4,8 +4,6 @@ import './page.css';
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import {
-  ShoppingCartIcon,
-  MenuIcon,
   XIcon,
   MinusIcon,
   PlusIcon,
@@ -291,7 +289,7 @@ export default function ECommerceApp() {
     </main >
   );
 
-  const renderCart = () => (
+   const renderCart = () => (
     // Cart Section
     <>
       {isCartOpen && (
@@ -404,12 +402,12 @@ export default function ECommerceApp() {
         isCartOpen={isCartOpen}
         setIsCartOpen={setIsCartOpen}
       />
-      {/* {currentPage === "landing" ? (
+      {currentPage === "landing" ? (
         renderLandingPage()
       ) : (
         <ProductPage products={products} addToCart={addToCart} />
       )}
-      {renderCart()} */}
+      {renderCart()}
       <SiteFooter />
     </div>
   );
