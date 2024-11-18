@@ -34,7 +34,7 @@ export const products = [
     id: 1,
     name: "Bandeja de 1000 unidades",
     price: 99.99,
-    image: img1,
+    image: img1
   },
   {
     id: 2,
