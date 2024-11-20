@@ -1,27 +1,18 @@
 "use client";
 
-import SiteFooter from "@/components/site-footer";
-import Header from "@/components/site-header";
 import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 import factory from "@/public/factory.jpg";
 import { Subtitle } from "@/components/ui/subtitle";
+import { Button } from "@/components/ui/button";
 
 function AboutSection() {
-  const [currentPage, setCurrentPage] = useState("landing");
-  const [cart, setCart] = useState([]);
-  const [isCartOpen, setIsCartOpen] = useState(false);
-
   return (
     <>
-      <Header
-        setCurrentPage={setCurrentPage}
-        cart={cart}
-        setCart={setCart}
-        isCartOpen={isCartOpen}
-        setIsCartOpen={setIsCartOpen}
-      />
       <section className="w-full py-4  min-h-screen">
+        <Button className="fixed top-5 right-5" onClick={() => window.location.href = '/'}>
+          Volver
+        </Button>
         <div className="container px-4 md:px-6">
           <Subtitle subtitle="Sobre Nosotros" paragraph="Conoce más sobre nosotros" />
           <article className="flex flex-col sm:flex-row">
@@ -57,7 +48,6 @@ function AboutSection() {
           </article>
         </div>
       </section>
-      <SiteFooter />
     </>
   );
 }
